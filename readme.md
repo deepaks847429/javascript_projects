@@ -203,6 +203,186 @@ web api
 * location
 
 
+Higher order function
+
+A function which take another function as arguments or return function from it.
+
+function x(){
+  console.log("namaste");
+}
+
+function y(x){
+
+}
+
+const radius=[3,1,2,4];
+
+const area=function(radius){
+  return Math.PI*radius*radius;
+};
+
+const circumfarence = function (radius){
+  return 2*Math.PI*radius;
+}
+
+const daimeter= function (radius){
+  return 2*radius;
+};
+
+const calculate =function(radius, logic){
+  const output=[];
+  for(int i=0; i< radius.length; i++){
+    output.push(logic(radius[i]));
+  }
+  return output;
+}
+
+console.log(calculate(radius, area));
+
+
+
+
+map, filter, reduce
+
+
+-> map transform the array.
+
+const arr= [2,3,4,6,8]
+
+function double(x){
+  return x*2;
+}
+
+const output= arr.map(double);
+console.log(ourtput);
+
+
+-> filter function use to filter array
+
+const arr=[3,5,6,8,9]
+
+function isOdd(x){
+  return x%2===0;
+}
+
+const output= arr.filter(isOdd);
+
+
+->reduce function
+
+const arr=[2,5,6,7]
+
+const output= arr,reduce(function(acc, curr){
+  acc=acc+curr;
+  return acc;
+}, 0);
+console.log(output);
+
+const output=arr.reduce(function(arr, curr){
+  if(curr, acc){
+    acc=curr;
+  }
+}, 0);
+
+
+
+episode-2
+
+Callback hell(pyramid of )
+
+const cart =["shoes", "pants", "kurta"]
+
+api.createorder(cart, function(){
+  api.procedetopayment()
+})
+
+Inversion of control
+
+
+Promise
+
+const cart =["shoes", "pants", "kurta"]
+
+const promise=createorder(cart);
+promise.then(function(){
+  procedetopayment(orderid);
+
+})
+.catch(function(err){
+  console.log(err.message);
+})
+
+
+
+function createorder(cart){
+  const pr=new promise(function(resolve, reject){
+    //createordeer
+    // validatecart
+    //orderid
+
+    if(!validatecard(cart)){
+      const err=new Error("cart is invalid");
+      reject(err);
+
+    }
+    const orderid="12345"
+    if(orderid){
+      resolve(ordeid);
+    }
+
+  });
+  return pr;
+}
+
+
+ASync await
+
+-> async function always return promise.
+
+async function getdata(){
+  return Namaste;
+}
+
+const datapromise =getdata();
+datapromise.then((res)=>console.log(res));
+
+await->only used inside async function.
+
+->async and await use to handle promise.(Js engine wait till promise resolve).
+
+
+
+
+this keyword in javascript
+
+
+// this in global scope
+consoler.log(this);
+->global object-window, object
+
+//this inside a function
+
+function x(){
+  console.log(this);(value depends on strict mode, in strict mode undefined, otherwise window)
+}
+
+
+
+
+
+
+
+
+.
+
+
+
+
+
+
+
+
+
 
 
 
